@@ -4,27 +4,27 @@ use std::io;
 
 fn main() {
   choose_conversion();
+  go_again();
 }
 
 fn convert_to_celsius() {
   let value = get_value();
   let conversion = (value - 32) * 5/9;
   println!("{value}ºF is {conversion}ºC");
-  return
 }
 
 fn convert_to_fahrenheit() {
   let value = get_value();
   let conversion = value * 9/5 + 32;
   println!("{value}ºC is {conversion}ºF");
-  return
 }
 
 // get conversion unit
 fn get_unit() -> String {
   loop {
     let mut unit = String::new();
-    println!("choose a unit to convert: (f)ahrenheit/(c)elsius");
+    println!("celsius <-> farenheit converter");
+    println!("choose a unit to convert from: (f)ahrenheit/(c)elsius");
 
     io::stdin()
       .read_line(&mut unit)
@@ -38,6 +38,7 @@ fn get_unit() -> String {
   }
 }
 
+// get conversion value
 fn get_value() -> i32 {
   loop {
     println!("please enter a value to convert");
@@ -69,8 +70,39 @@ fn choose_conversion() {
       convert_to_celsius();
       break
     } else {
-      println!("{unit} is not valid, please enter a valid unit:");
+      println!("{unit} is not valid.");
       continue
     }
+  }
+}
+
+fn go_again() {
+  loop {
+    let mut choice = get_answer();
+    if choice == "y" {
+      choose_conversion()
+    } else if choice == "" {
+      choose_conversion()
+    } else if choice == "n" {
+      return
+    } else {
+      println!("choice invalid");
+      continue
+    }
+  }
+}
+
+fn get_answer() -> String {
+  loop {
+    println!("Go again? (Y/n)");
+    let mut answer = String::new();
+
+    io::stdin()
+      .read_line(&mut answer)
+      .expect("Failed to read line");
+
+    let out = String::from(answer.trim());
+    return out
+
   }
 }
