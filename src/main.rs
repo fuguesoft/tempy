@@ -3,6 +3,7 @@
 use std::io;
 
 fn main() {
+  println!("welcome to tempy!\n a celsius <-> farenheit converter");
   choose_conversion();
   go_again();
 }
@@ -23,7 +24,6 @@ fn convert_to_fahrenheit() {
 fn get_unit() -> String {
   loop {
     let mut unit = String::new();
-    println!("celsius <-> farenheit converter");
     println!("choose a unit to convert from: (f)ahrenheit/(c)elsius");
 
     io::stdin()
