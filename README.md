@@ -9,6 +9,10 @@ This was built to get some practice with concepts from chapter 3 of the rust boo
 ## Prerequisites
 [Cargo](https://doc.rust-lang.org/cargo/getting-started/installation.html)
 
+## Compatibility
+It's rust so it should just work on any of the big three? There's some docs on
+Windows exceptions I ain't quite read yet...
+
 ## Usage
 Download the repository:
 
