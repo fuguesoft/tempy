@@ -12,6 +12,17 @@ This was built to get some practice with concepts from chapters 1-3 of the rust 
 It's rust so it should just work on any of the big three? There's some docs on
 Windows exceptions I ain't quite read yet...
 
+## Uninstall
+**Cargo**
+```sh
+rm -r /path/to/tempy
+```
+
+**Nix**
+```sh
+nix-store --gc
+```
+
 ## Install
 **Cargo**
 Download the repository:
@@ -20,7 +31,7 @@ Download the repository:
 git clone git@github.com/fuguesoft/tempy
 ```
 
-**Nix (Flake)**
+**Nix/NixOS (Flake)**
 
 1. Enable nix flakes in `configuration.nix` 
 ```nix
@@ -59,7 +70,7 @@ home.packages = with pkgs; [
 ]
 ```
 
-## Usage
+## Run without installing
 **Cargo**
 Run the program from within the project root:
 ```sh

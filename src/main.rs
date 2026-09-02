@@ -1,8 +1,15 @@
-// A program to convert a temperatures from Fahrenheit to Celsius and vice versa
+// Convert a temperatures from Fahrenheit to Celsius and vice versa
 #![allow(unused)]
 use std::io;
 
 fn main() {
+  // suggested flow
+  // Welcome user
+  // LOOP START
+  // Get unit/value
+  // Do Conversion
+  // Ask to go again
+  // LOOP END
   choose_conversion();
   go_again();
 }
@@ -63,6 +70,8 @@ fn choose_conversion() {
     let mut unit = get_unit();
     // println!("ur mum, unit is: {unit}");
 
+    // exo says: do this check inside of get_unit() and 
+    // return and enum to match against
     if unit == "c" {
       println!("converting celsius to farenheit");
       convert_to_fahrenheit();
