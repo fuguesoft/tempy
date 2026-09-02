@@ -3,7 +3,6 @@
 use std::io;
 
 fn main() {
-  println!("welcome to tempy!\na celsius <-> farenheit converter");
   choose_conversion();
   go_again();
 }
@@ -59,6 +58,8 @@ fn get_value() -> i32 {
 
 fn choose_conversion() {
   loop {
+    print!("\x1b[2J\x1b[1;1H");
+    println!("welcome to tempy!\na celsius <-> farenheit converter");
     let mut unit = get_unit();
     // println!("ur mum, unit is: {unit}");
 

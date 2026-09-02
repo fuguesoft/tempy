@@ -4,7 +4,7 @@ Small rust program to convert temperature values from fahrenheit to celsius and
 vice versa.
 
 ## Why?
-This was built to get some practice with concepts from chapter 3 of the rust book.
+This was built to get some practice with concepts from chapters 1-3 of the rust book.
 
 ## Prerequisites
 [Cargo](https://doc.rust-lang.org/cargo/getting-started/installation.html)
