@@ -35,7 +35,7 @@ cargo run
 ```
 
 **Nix**
-1. Enable Nix Flakes ([See Above](##Install))
+1. Enable Nix Flakes ([See Below](##Install))
 2. Temporarily build and run without installing
 ```sh
 nix run github:fuguesoft/tempy
