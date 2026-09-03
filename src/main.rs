@@ -1,17 +1,21 @@
 // Convert a temperatures from Fahrenheit to Celsius and vice versa
 #![allow(unused)]
 use std::io;
+use std::process;
 
 fn main() {
   // suggested flow
-  // Welcome user
   // LOOP START
-  // Get unit/value
-  // Do Conversion
-  // Ask to go again
+  loop {
+    // Welcome user
+    welcome();
+    // Get unit/value
+    // Do Conversion
+    choose_conversion();
+    // Ask to go again
+    go_again();
+  }
   // LOOP END
-  choose_conversion();
-  go_again();
 }
 
 fn convert_to_celsius() {
@@ -24,6 +28,11 @@ fn convert_to_fahrenheit() {
   let value = get_value();
   let conversion = value * 9/5 + 32;
   println!("{value}ºC is {conversion}ºF");
+}
+
+fn welcome() {
+  print!("\x1b[2J\x1b[1;1H");
+  println!("welcome to tempy!\na celsius <-> farenheit converter");
 }
 
 // get conversion unit
@@ -65,8 +74,6 @@ fn get_value() -> i32 {
 
 fn choose_conversion() {
   loop {
-    print!("\x1b[2J\x1b[1;1H");
-    println!("welcome to tempy!\na celsius <-> farenheit converter");
     let mut unit = get_unit();
     // println!("ur mum, unit is: {unit}");
 
@@ -91,11 +98,11 @@ fn go_again() {
   loop {
     let mut choice = get_answer();
     if choice == "y" {
-      choose_conversion()
-    } else if choice == "" {
-      choose_conversion()
-    } else if choice == "n" {
       return
+    } else if choice == "" {
+      return
+    } else if choice == "n" {
+      process::exit(0x100)
     } else {
       println!("choice invalid");
       continue
