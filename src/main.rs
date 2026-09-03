@@ -35,6 +35,8 @@ fn welcome() {
   println!("welcome to tempy!\na celsius <-> farenheit converter");
 }
 
+// Try to combine get_unit and get_value into one function that parses a string
+// you'll need a way to check for a number and end char in a string
 // get conversion unit
 fn get_unit() -> String {
   loop {
@@ -75,10 +77,9 @@ fn get_value() -> i32 {
 fn choose_conversion() {
   loop {
     let mut unit = get_unit();
-    // println!("ur mum, unit is: {unit}");
 
     // exo says: do this check inside of get_unit() and 
-    // return and enum to match against
+    // touch this up when you understand enums
     if unit == "c" {
       println!("converting celsius to farenheit");
       convert_to_fahrenheit();
@@ -94,6 +95,7 @@ fn choose_conversion() {
   }
 }
 
+// touch this up when you understand enums
 fn go_again() {
   loop {
     let mut choice = get_answer();
