@@ -7,6 +7,8 @@ This was built to get some practice with concepts from chapters 1-3 of the rust 
 
 ## Prerequisites
 [Cargo](https://doc.rust-lang.org/cargo/getting-started/installation.html)
+or
+[Nix](https://nixos.org/download/)
 
 ## Compatibility
 It's rust so it should just work on any of the big three? There's some docs on
@@ -23,12 +25,34 @@ rm -r /path/to/tempy
 nix-store --gc
 ```
 
+## Run without installing
+**Cargo**
+Run the program from within the project root:
+```sh
+git clone git@github.com/fuguesoft/tempy
+cd /path/to/tempy
+cargo run
+```
+
+**Nix**
+1. Enable Nix Flakes ([See Above](##Install))
+2. Temporarily build and run without installing
+```sh
+nix run github:fuguesoft/tempy
+```
+
 ## Install
 **Cargo**
 Download the repository:
 
 ```sh
 git clone git@github.com/fuguesoft/tempy
+```
+
+Build and install:
+```sh
+cd /path/to/tempy
+cargo build
 ```
 
 **Nix/NixOS (Flake)**
@@ -68,19 +92,4 @@ home.nix
 home.packages = with pkgs; [
   inputs.tempy.packages."${pkgs.stdenv.hostPlatform.system}".default
 ]
-```
-
-## Run without installing
-**Cargo**
-Run the program from within the project root:
-```sh
-cd /path/to/tempy
-cargo run
-```
-
-**Nix**
-1. Enable Nix Flakes ([See Above](##Install))
-2. Temporarily build and run without installing
-```sh
-nix run github:fuguesoft/tempy
 ```
